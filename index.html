@@ -8,6 +8,15 @@
   </head>
   <body>
     <h1>Hello world!</h1>
-    <script></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("serviceWorker.js")
+          .then((res) => console.warn("Service worker is working!\n", res))
+          .catch((e) => console.error(e));
+      } else {
+        console.error("Service worker is not working!");
+      }
+    </script>
   </body>
 </html>
