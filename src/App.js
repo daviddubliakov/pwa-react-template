@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+import './assets/styles/App.sass';
+
 const App = () => (
   <Navbar bg="primary" variant="dark">
     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
