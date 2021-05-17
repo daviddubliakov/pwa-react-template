@@ -7,17 +7,25 @@ this.addEventListener("install", (event) => {
         '/static/js/main.chunk.js',
         '/static/js/0.chunk.js',
         '/static/js/bundle.js',
+        '/manifest.js',
+        '/static/js/vendors~main.chunk.js',
         '/index.html',
-        '/'
+        '/',
+        '/users',
+        '/about'
       ]))
   )
 });
 
 this.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((res) => {
-        if (res) return res;
-      })
-  )
+  if (!navigator.onLine) {
+    event.respondWith(
+      caches.match(event.request)
+        .then((res) => {
+          if (res) {
+            return res;
+          }
+        })
+    )
+  }
 });
