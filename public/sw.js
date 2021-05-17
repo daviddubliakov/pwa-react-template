@@ -25,6 +25,10 @@ this.addEventListener("fetch", (event) => {
           if (res) {
             return res;
           }
+
+          const requestUrl = event.request.clone();
+
+          fetch(requestUrl)
         })
     )
   }
