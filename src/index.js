@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import swDev from './swDev';
 import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +15,5 @@ ReactDOM.render(
   document.getElementById('container')
 );
 
-serviceWorkerRegistration.unregister();
-
+swDev();
 reportWebVitals();
